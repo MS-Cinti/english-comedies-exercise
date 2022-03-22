@@ -18,3 +18,8 @@ const getLongestEnglishComedy = (movies) => {
 }
 
 console.log(getLongestEnglishComedy(movies))
+
+//shorter verzió
+const getLongestEnglishComedy = (movies) => (movies.filter((movie) => movie.genre === "comedy" && movie.originalLanguage === "english").length === 0) ? null : movies.filter((movie) => movie.genre === "comedy" && movie.originalLanguage === "english").reduce((prev, curr) => (prev.length < curr.length) ? curr : prev).title
+
+console.log(getLongestEnglishComedy(movies))
